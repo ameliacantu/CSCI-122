@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Initialize an array to store the double values
+        double[] doubleValues = new double[20];
+        int count = 0;
+
+        // Create a Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Allow the user to enter values
+        System.out.println("Enter up to 20 double values. Enter any non-double value to finish.");
+
+        while (count < 20) {
+            System.out.print("Enter a double value (or any non-double value to finish): ");
+            // Check if the input is a double value
+            if (scanner.hasNextDouble()) {
+                // Read the double value and store it in the array
+                doubleValues[count] = scanner.nextDouble();
+                count++;
+            } else {
+                // If the input is not a double, exit the loop
+                break;
+            }
+        }
+
+        // Display each entered value
+        System.out.println("\nEntered values:");
+        for (int i = 0; i < count; i++) {
+            System.out.println(doubleValues[i]);
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
